@@ -1,0 +1,21 @@
+.auto-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.auto-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  flex: 1 1 calc(50% - 15px);
+  min-width: 200px;
+}
+
+table {
+  width: 100%;
+}

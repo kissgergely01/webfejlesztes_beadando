@@ -1,0 +1,89 @@
+<!--<mat-card>
+  <h2>Ruházati termékek</h2>
+  <table mat-table [dataSource]="ruhak">
+    <ng-container matColumnDef="nev">
+      <th mat-header-cell *matHeaderCellDef>Név</th>
+      <td mat-cell *matCellDef="let ruha">{{ruha.nev}}</td>
+    </ng-container>
+    <ng-container matColumnDef="meret">
+      <th mat-header-cell *matHeaderCellDef>Méret</th>
+      <td mat-cell *matCellDef="let ruha">{{ruha.meret}}</td>
+    </ng-container>
+    <ng-container matColumnDef="szin">
+      <th mat-header-cell *matHeaderCellDef>Szín</th>
+      <td mat-cell *matCellDef="let ruha">{{ruha.szin}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['nev', 'meret', 'szin']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['nev', 'meret', 'szin']"></tr>
+  </table>
+</mat-card>-->
+
+<mat-card class="auto-container">
+  <h2>Auto Kezelés</h2>
+
+  <form (submit)="addOrUpdateAuto()" class="auto-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Gyártó</mat-label>
+      <input matInput [(ngModel)]="newAuto.gyarto" name="gyarto" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>model</mat-label>
+      <input matInput [(ngModel)]="newAuto.model" name="model" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Évjárat</mat-label>
+      <input matInput [(ngModel)]="newAuto.evjarat" name="evjarat" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ár</mat-label>
+      <input matInput [(ngModel)]="newAuto.ar" name="ar" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      {{ isEditing ? 'Mentés' : 'Hozzáadás' }}
+    </button>
+    <button mat-raised-button color="warn" type="button" (click)="resetForm()" *ngIf="isEditing">Mégse</button>
+  </form>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="gyarto">
+      <th mat-header-cell *matHeaderCellDef> gyarto </th>
+      <td mat-cell *matCellDef="let auto"> {{ auto.gyarto }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef> model </th>
+      <td mat-cell *matCellDef="let auto"> {{ auto.model }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="evjarat">
+      <th mat-header-cell *matHeaderCellDef> evjarat </th>
+      <td mat-cell *matCellDef="let auto"> {{ auto.evjarat }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ar">
+      <th mat-header-cell *matHeaderCellDef> ar </th>
+      <td mat-cell *matCellDef="let auto"> {{ auto.ar }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Műveletek </th>
+      <td mat-cell *matCellDef="let auto">
+        <button mat-icon-button color="accent" (click)="editAuto(auto.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteAuto(auto.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+
+
