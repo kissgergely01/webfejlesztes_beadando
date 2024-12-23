@@ -1,0 +1,13 @@
+hu\unideb\inf\autokereskedes\data\entity\AutoEntity.class
+hu\unideb\inf\autokereskedes\data\entity\ExtrakEntity.class
+hu\unideb\inf\autokereskedes\service\AutoManagementService.class
+hu\unideb\inf\autokereskedes\service\impl\AutoManagementServiceImpl$4.class
+hu\unideb\inf\autokereskedes\AutokereskedesApplication.class
+hu\unideb\inf\autokereskedes\service\impl\AutoManagementServiceImpl.class
+hu\unideb\inf\autokereskedes\service\impl\AutoManagementServiceImpl$3.class
+hu\unideb\inf\autokereskedes\service\dto\AutoDto.class
+hu\unideb\inf\autokereskedes\data\repository\AutoRepository.class
+hu\unideb\inf\autokereskedes\service\impl\AutoManagementServiceImpl$2.class
+hu\unideb\inf\autokereskedes\controller\AutoController.class
+hu\unideb\inf\autokereskedes\data\repository\ExtrakRepository.class
+hu\unideb\inf\autokereskedes\service\impl\AutoManagementServiceImpl$1.class
